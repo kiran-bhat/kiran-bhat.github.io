@@ -743,7 +743,9 @@ export class Renderer {
 
           if (primitive._indexBuffer) {
             gl.drawElements(primitive._mode, primitive._elementCount,
-                primitive._indexType, primitive._indexByteOffset);
+                5123, primitive._indexByteOffset);
+
+          //primitive._indexType
           } else {
             gl.drawArrays(primitive._mode, 0, primitive._elementCount);
           }
