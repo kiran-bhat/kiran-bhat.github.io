@@ -65,28 +65,28 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       // WebGL scene globals.
       let gl = null;
       let renderer = null;
+
       let scene = new Scene();
       scene.enableStats(false);
-      //let solarSystem = new Gltf2Node({url: 'media/gltf/garage/garage.gltf'});
+      let showRoom = new Gltf2Node({url: 'media/gltf/showroom/scene.gltf'});
+      showRoom.selectable = true;
       // The solar system is big (citation needed). Scale it down so that users
       // can move around the planets more easily.
-      //solarSystem.scale = [0.5, 0.5, 0.5];
-    //  scene.addNode(solarSystem);
-
-     let bottle = new Gltf2Node({url: 'media/gltf/waterbottle/WaterBottle.gltf'});
-    scene.addNode(bottle);
+      scene.addNode(showRoom);
+      let bottle = new Gltf2Node({url: 'media/gltf/waterbottle/WaterBottle.gltf'});
+      scene.addNode(bottle);
       // Still adding a skybox, but only for the benefit of the inline view.
-      //let skybox = new SkyboxNode({url: 'media/textures/milky-way-4k.png'});
-      //scene.addNode(skybox);
-      //scene.standingStats(true);
-      
+      let skybox = new SkyboxNode({url: 'media/textures/milky-way-4k.png'});
+     
+      // scene.addNode(skybox);
+      scene.standingStats(true);
       function initXR() {
         xrButton = new WebXRButton({
           onRequestSession: onRequestSession,
           onEndSession: onEndSession,
           textEnterXRTitle: "ENTER STORE",
           textXRNotFoundTitle: "AR NOT FOUND",
-          textExitXRTitle: "EXIT  STORE",
+          textExitXRTitle: "EXIT STORE",
         });
         document.querySelector('header').appendChild(xrButton.domElement);
 
@@ -119,7 +119,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
           return;
 
         gl = createWebGLContext({
-          xrCompatible: true
+          xrCompatible: true,
+          webgl2: true
         });
         document.body.appendChild(gl.canvas);
 
