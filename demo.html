@@ -69,12 +69,13 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       let solarSystem = new Gltf2Node({url: 'media/gltf/showroom/scene.gltf'});
       // The solar system is big (citation needed). Scale it down so that users
       // can move around the planets more easily.
-      solarSystem.scale = [0.5, 0.5, 0.5];
+      //solarSystem.scale = [0.5, 0.5, 0.5];
       scene.addNode(solarSystem);
       // Still adding a skybox, but only for the benefit of the inline view.
-      let skybox = new SkyboxNode({url: 'media/textures/milky-way-4k.png'});
-      scene.addNode(skybox);
-
+      //let skybox = new SkyboxNode({url: 'media/textures/milky-way-4k.png'});
+      //scene.addNode(skybox);
+      scene.standingStats(true);
+      
       function initXR() {
         xrButton = new WebXRButton({
           onRequestSession: onRequestSession,
@@ -136,7 +137,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         if (session.isImmersive) {
           // When in 'immersive-ar' mode don't draw an opaque background because
           // we want the real world to show through.
-          skybox.visible = false;
+          //skybox.visible = false;
         }
 
         initGL();
@@ -162,7 +163,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         if (event.session.isImmersive) {
           xrButton.setSession(null);
           // Turn the background back on when we go back to the inlive view.
-          skybox.visible = true;
+         // skybox.visible = true;
         }
       }
 
