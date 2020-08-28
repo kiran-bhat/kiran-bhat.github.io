@@ -743,7 +743,7 @@ export class Renderer {
 
           if (primitive._indexBuffer) {
             gl.drawElements(primitive._mode, primitive._elementCount,
-                5123, primitive._indexByteOffset);
+                gl.UNSIGNED_SHORT, primitive._indexByteOffset);
 
           //primitive._indexType
           } else {
