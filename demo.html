@@ -138,6 +138,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
       function onSessionStarted(session) {
         session.addEventListener('end', onSessionEnded);
+        session.addEventListener('selectstart', onSelectStart);
+        session.addEventListener('selectend', onSelectEnd);
 
         if (session.isImmersive) {
           // When in 'immersive-ar' mode don't draw an opaque background because
@@ -179,14 +181,30 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
                          xrImmersiveRefSpace :
                          inlineViewerHelper.referenceSpace;
         let pose = frame.getViewerPose(refSpace);
-
         scene.startFrame();
-
         session.requestAnimationFrame(onXRFrame);
-
         scene.drawXRFrame(frame, pose);
-
         scene.endFrame();
+      }
+
+      function onSelectStart(ev) {
+        
+        let refSpace = ev.frame.session.isImmersive ?
+                         xrImmersiveRefSpace :
+                         inlineViewerHelper.referenceSpace;
+        let targetRayPose = ev.frame.getPose(ev.inputSource.targetRaySpace, refSpace);        
+        if (!targetRayPose) {
+          return;
+        }
+
+        let hitResult = scene.hitTest(targetRayPose.transform);
+        if (hitResult) {
+          console.log('Click on a node');
+        }
+      }
+
+      function onSelectEnd(){
+
       }
 
       // Start the XR application.
