@@ -742,13 +742,8 @@ export class Renderer {
           gl.uniformMatrix4fv(program.uniform.MODEL_MATRIX, false, instance.worldMatrix);
 
           if (primitive._indexBuffer) {
-            if(5125==primitive._indexType) {
-              gl.drawElements(primitive._mode, primitive._elementCount,
-                5126, primitive._indexByteOffset);
-            } else {
             gl.drawElements(primitive._mode, primitive._elementCount,
                 primitive._indexType, primitive._indexByteOffset);
-          }
           } else {
             gl.drawArrays(primitive._mode, 0, primitive._elementCount);
           }
