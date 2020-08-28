@@ -74,8 +74,10 @@ export class Gltf2Loader {
         .then((response) => {
           let i = url.lastIndexOf('/');
           let baseUrl = (i !== 0) ? url.substring(0, i + 1) : '';
+          console.log(url);
 
           if (url.endsWith('.gltf')) {
+            console.log(response);
             return response.json().then((json) => {
               return this.loadFromJson(json, baseUrl);
             });
