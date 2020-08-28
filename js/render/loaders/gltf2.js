@@ -158,9 +158,11 @@ export class Gltf2Loader {
     let textures = [];
     if (json.textures) {
       for (let texture of json.textures) {
+        console.log(texture);
         let image = images[texture.source];
         let glTexture = image.texture(bufferViews);
         if (texture.sampler) {
+          console.log(texture.sampler);
           let sampler = sampler[texture.sampler];
           glTexture.sampler.minFilter = sampler.minFilter;
           glTexture.sampler.magFilter = sampler.magFilter;
