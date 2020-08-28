@@ -163,7 +163,7 @@ export class Gltf2Loader {
         let glTexture = image.texture(bufferViews);
         if (texture.sampler) {
           console.log(texture.sampler);
-          let sampler = texture.sampler;
+          let sampler = sampler[texture.sampler];
           glTexture.sampler.minFilter = sampler.minFilter;
           glTexture.sampler.magFilter = sampler.magFilter;
           glTexture.sampler.wrapS = sampler.wrapS;
