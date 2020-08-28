@@ -5,22 +5,32 @@
     <title>Hello, WebVR! • A-Frame</title>
     <meta name="description" content="Hello, WebVR! • A-Frame">
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-  </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js//custom-js/all.js"></script>
+  </head>  
   <body>
     <a-scene background="color: #FAFAFA">
-  <a-assets>
-    <a-asset-item id="showroom" src="media/gltf/showroom/scene.gltf"></a-asset-item>
-    <a-asset-item id="car" src="media/gltf/musclecar/scene.gltf"></a-asset-item>
-<!--    <a-asset-item id="car" src="media/gltf/musclecar/scene.gltf"></a-asset-item>
+    <a-assets>
+      <a-asset-item id="showroom" src="media/gltf/showroom/scene.gltf"></a-asset-item>
+      <a-asset-item id="car" src="media/gltf/musclecar/scene.gltf"></a-asset-item>
+      <a-asset-item id="shelf-obj" src="media/obj/shelf/library.obj"></a-asset-item>
+      <img id="shelf-material" src="media/obj/shelf/tex/Wood_Texture_13_by_Sed_rah_Stock.jpg"></img>
+      <a-asset-item id="shirt-obj" src="media/obj/shirtstand/stand.obj"></img>
+      <a-asset-item id="shirt-mtl" src="media/obj/shirtstand/stand.mtl"></img>
+  <!--    <a-asset-item id="car" src="media/gltf/musclecar/scene.gltf"></a-asset-item>
 
-    <a-asset-item id="nissan" src="media/gltf/nissan/scene.gltf"></a-asset-item>
-    <a-asset-item id="martin" src="media/gltf/martin/scene.gltf"></a-asset-item>
-    <a-asset-item id="vm" src="media/gltf/vw/scene.gltf"></a-asset-item>
--->
+      <a-asset-item id="nissan" src="media/gltf/nissan/scene.gltf"></a-asset-item>
+      <a-asset-item id="martin" src="media/gltf/martin/scene.gltf"></a-asset-item>
+      <a-asset-item id="vm" src="media/gltf/vw/scene.gltf"></a-asset-item>
+  -->
 
-  </a-assets>
-  <a-entity gltf-model="#showroom"></a-entity>
-  <a-entity scale="0.01 0.01 0.01" gltf-model="#car"></a-entity>
+    </a-assets>
+    <a-entity camera look-controls wasd-controls="acceleration: 1000" position="-19.003 13.272 -108.959"></a-entity>
+    <a-entity scale="0.5 0.5 0.5" gltf-model="#showroom"></a-entity>
+    <a-entity position="-19.003 10.272 -128.959" scale="0.02 0.02 0.02" gltf-model="#car"></a-entity>
+    <a-entity position="-19.003 0.272 -128.959" scale="0.1 0.1 0.1" obj-model="obj: #shelf-obj;" material="src: #shelf-material"></a-entity>
+    <a-entity position="-39.003 0.272 -128.959" scale="0.1 0.1 0.1" obj-model="obj: #shelf-obj;" material="src: #shelf-material"></a-entity>
+    <a-entity position="8.119 0.869 -101.851" scale="0.3 0.3 0.3" obj-model="obj: #shirt-obj;mtl: #shirt-mtl"></a-entity>
 <!--  
   <a-entity scale="0.02 0.02 0.02" gltf-model="#nissan"></a-entity>
   <a-entity scale="0.02 0.02 0.02" gltf-model="#martin"></a-entity>
