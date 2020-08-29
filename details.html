@@ -26,6 +26,7 @@
       <div class="loading"></div>
     </div>
     <a-scene shopping-room background="color: #FAFAFA">
+      <a-sky color="#AFAFAF"></a-sky>
       <a-assets>
         <a-asset-item id="mat" src="media/obj/mat/floor.gltf"></a-asset-item>
 
@@ -40,8 +41,9 @@
 
         <a-asset-item id="frame-obj" src="media/obj/frame/frame.obj"></a-asset-item>
         <a-asset-item id="frame-mtl" src="media/obj/frame/frame.mtl"></a-asset-item>
+        
       </a-assets>
-      <a-entity id="main-camera-wrapper" position="0 6 -12" rotation="-20 180 0">
+      <a-entity id="main-camera-wrapper" position="0 6 -12" rotation="0 180 0">
         <a-camera id="main-camera" look-controls wasd-controls="acceleration: 2000">
           <a-cursor id="fuse-cursor" fuse="true" geometry="radiusInner: 0.02; radiusOuter: 0.03; thetaLength: 360; thetaStart: 90;"
           color="#ffffff" opacity="1" repeat="1 1" shader="flat" position="0 0 -1" objects=".clickable"
@@ -59,7 +61,11 @@
       <!-- <a-entity position="0 0 0" scale="1 0.001 1" rotation="0 0 0" obj-model="obj: #mat-obj;mtl: #mat-mtl"></a-entity> -->
       <a-entity position="0.406 1.618 -0.462" scale="0.02 0.02 0.02" rotation="0 180 0" obj-model="obj: #shoes-obj;mtl: #shoes-mtl"></a-entity>
       <a-entity position="0 0 0" scale="0.1 0.1 0.1" rotation="-90 0 0" obj-model="obj: #table-obj;mtl: #table-mtl"></a-entity>
-      <a-entity position="-2.906 2.747 3.368" scale="0.1 0.1 0.1" rotation="0 180 0" obj-model="obj: #frame-obj;mtl: #frame-mtl"></a-entity>
+      <a-entity position="-2.906 2.747 3.368" scale="0.1 0.2 0.1" rotation="0 180 0" obj-model="obj: #frame-obj;mtl: #frame-mtl"></a-entity>
+      <a-image src="media/img/description.png" rotation="180 0 180" position="-2.763 6.253 3.533" scale="3.6 5.2 5"></a-image>
+      <a-image src="media/img/addtocart.png" rotation="180 0 180" position="-2.619 5.293 3.533" scale="3 0.580 5"></a-image>
+      <a-image src="media/img/buynow.png" rotation="180 0 180" position="-2.619 4.472 3.533" scale="3 0.580 5"></a-image>
+      <a-image src="media/img/logo.png" rotation="180 0 180" position="-2.640 8.729 3.533" scale="3.300 1 5"></a-image>
     </a-scene>
   </body>
 </html>
