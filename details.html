@@ -9,23 +9,13 @@
     <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.6.0/dist/aframe-extras.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.5.1/dist/aframe-look-at-component.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-          var scene = document.querySelector('a-scene');
-          var splash = document.querySelector('#splash');
-          scene.addEventListener('loaded', function (e) {
-              splash.style.display = 'none';
-          });
-      });
-
-    </script>
-    <!-- <script src="js//custom-js/all.js"></script> -->
+    <script src="js//custom-js/details.js"></script>
   </head>  
   <body>
     <div id="splash">
       <div class="loading"></div>
     </div>
-    <a-scene shopping-room background="color: #FAFAFA">
+    <a-scene details-room background="color: #FAFAFA">
       <a-sky color="#AFAFAF"></a-sky>
       <a-assets>
         <a-asset-item id="mat" src="media/obj/mat/floor.gltf"></a-asset-item>
@@ -47,10 +37,10 @@
       </a-assets>
       <a-entity id="main-camera-wrapper" position="0 6 -12" rotation="0 180 0">
         <a-camera id="main-camera" look-controls wasd-controls="acceleration: 2000">
-          <a-cursor id="fuse-cursor" fuse="true" geometry="radiusInner: 0.02; radiusOuter: 0.03; thetaLength: 360; thetaStart: 90;"
+          <a-cursor id="fuse-cursor" fuse="true" geometry="radiusInner: 0.01; radiusOuter: 0.02; thetaLength: 360; thetaStart: 90;"
           color="#ffffff" opacity="1" repeat="1 1" shader="flat" position="0 0 -1" objects=".clickable"
           rotation="0 0 0" scale="1 1 1" visible="true"></a-cursor>
-          <a-ring id="fuse-progress" radius-inner="0.02" radius-outer="0.03" theta-length="360"
+          <a-ring id="fuse-progress" radius-inner="0.01" radius-outer="0.02" theta-length="360"
           theta-start="90" color="#ef2e5f" opacity="0" repeat="1 1" shader="flat" position="0 0 -0.999"
           rotation="0 0 0" scale="1 1 1" visible="true" class="clickable" animation="delay: 0; dir: normal; dur: 1500; easing: linear; loop: 0; property: geometry.thetaLength; startEvents: fusing; to: 0; from: 360;"
           animation__1="delay: 0; dir: normal; dur: 500; easing: linear; loop: 0; property: opacity; startEvents: fusing; to: 1; from: 0;"></a-ring>
@@ -67,8 +57,10 @@
 
       <a-entity position="-8.911 -0.028 -1.208" scale="0.2 0.2 0.1" rotation="0 150.000 0" obj-model="obj: #stand-obj;"></a-entity>
       <a-image src="media/img/description.png" rotation="185.000 330.000 180" position="-8.809 5.915 -1.292" scale="3.6 5.2 5"></a-image>
-      <a-image src="media/img/addtocart.png" rotation="185.000 330.000 180.000" position="-8.761 5.026 -1.519" scale="3.000 0.580 5"></a-image>
-      <a-image src="media/img/buynow.png" rotation="185.000 330.000 180.000" position="-8.761 4.215 -1.519" scale="3.000 0.580 5"></a-image>
+      <a-image src="media/img/addtocart.png" class="clickable add-to-cart" rotation="185.000 330.000 180.000" position="-8.761 5.026 -1.519" scale="3.000 0.580 5"></a-image>
+      <a-image src="media/img/buynow.png" class="clickable buy-now" rotation="185.000 330.000 180.000" position="-8.761 4.215 -1.519" scale="3.000 0.580 5"></a-image>
+
+      <a-text rotation="185.000 330.000 180" position="-8.071 5.067 -1.077" value="Added to cart!!"  color="#000000"></a-text>
 
       <!-- <a-entity position="-2.906 2.747 3.368" scale="0.1 0.2 0.1" rotation="0 180 0" obj-model="obj: #frame-obj;mtl: #frame-mtl"></a-entity>
       <a-image src="media/img/description.png" rotation="180 0 180" position="-2.763 6.253 3.533" scale="3.6 5.2 5"></a-image>
