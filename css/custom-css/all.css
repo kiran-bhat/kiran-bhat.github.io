@@ -1,0 +1,27 @@
+#splash {
+    position: fixed;
+    z-index: 999;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    margin: auto;
+    background-color: #232323;
+  }
+
+  
+  .loading {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 0.25rem solid rgba(255, 255, 255, 0.2);
+    border-top-color: white;
+    animation: spin 1s infinite linear;
+  }
+  
