@@ -8,6 +8,7 @@
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.6.0/dist/aframe-extras.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.5.1/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-html-shader@0.2.0/dist/aframe-html-shader.js"></script>
     <script src="js//custom-js/all.js"></script>
   </head>  
   <body>
@@ -118,6 +119,10 @@
     <a-cylinder class="checkpoint clickable" radius="10" height="100" position="153 50 115.858" color="#CCCCCC"  opacity="0.5"></a-cylinder>
     <a-cylinder class="checkpoint clickable" radius="10" height="100" position="24 50 -103.592" color="#CCCCCC"  opacity="0.5"></a-cylinder>
     <a-cylinder class="checkpoint clickable" radius="10" height="100" position="212.443 50 4.905" color="#f0c14b"  opacity="0.5"></a-cylinder>
+
+    <a-entity geometry="primitive: box" material="shader: html; target: #boxHTML" scale="1 46 46" position="251.617 35.382 5.565"></a-entity>
+    <a-image src="media/img/proceedtopay.png" class="clickable pay-button" position="251.063 23.043 6.893" scale="25 4 5" rotation="0 270 0"></a-image>
+
     <!-- <a-entity position="8.656 1.887 0.735" scale="0.01 0.01 0.01" obj-model="obj: #bag2-obj;mtl: #bag2-mtl"></a-entity> -->
 <!--  
   <a-entity scale="0.02 0.02 0.02" gltf-model="#nissan"></a-entity>
@@ -126,5 +131,25 @@
 -->
   
     </a-scene>
+    <!-- HTML to render as a material. -->
+    <div style="width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden;">
+      <div id="boxHTML" style="background-color: white; color: black; width: 800px; height: 800px; text-align: center">
+        <img src="media/img/logo.png">
+        <h1> Shopping cart </h1>
+        <hr>
+        <table style="margin: 20px;">
+          <tr>
+            <td><img src="media/img/heels.jpg" style="height: 120px; width: 120px;"></td>
+            <td >
+              <div style="padding-left: 40px; text-align: left;">
+                <div> <h2> Heel & Buckle London Women Black Lucite Peep-toe Boots </h2> </div>
+                <div> ₹ 7,999 </div>
+                <div> Sold by: Heel & Buckle </div>
+              </div>
+            </td>
+          </tr>
+        </table>        
+      </div>
+    </div>
   </body>
 </html>

@@ -18,6 +18,7 @@ function setupCameraControls(){
     var fuseProgress = document.querySelector('#fuse-progress');
     var camera = document.querySelector('#main-camera-wrapper');
     var checkpoints = document.querySelectorAll('.checkpoint');
+
     fuse.addEventListener('fusing', function (e) {
         fuseProgress.emit('fusing');
     });
@@ -33,18 +34,17 @@ function setupCameraControls(){
     });
 
     var asins = document.querySelectorAll('.asin');
+    
     asins.forEach(function(asin) {
         asin.addEventListener('click', function(e) {                    
-            // let asinScale = asin.getAttribute('scale');
-            // // asin.setAttribute('scale', {x: asinScale.x * 2, y: asinScale.y*2, z: asinScale.z * 2});
-            // asin.setAttribute('animation', 'property: scale; to: ' +asinScale.x * 2 + ' ' + asinScale.y*2 + ' ' + asinScale.z * 2);
             window.location = '/details.html'
         })
     });
-    // AFRAME.registerComponent('shopping-room', {
-    //     schema: {},
-    //     init: function () {
-            
-    //     }
-    //   });
+
+    var payButtons = document.querySelectorAll('.pay-button');
+    payButtons.forEach(function(payButton) {
+        payButton.addEventListener('click', function(e) {                    
+            window.location = 'https://www.amazon.in/upi/pending-transactions';
+        })
+    });
 }
