@@ -23,7 +23,6 @@ function setupClickEvents(){
 
             var addToCart = document.querySelectorAll('.add-to-cart')[0];
             addToCart.addEventListener('click', function(e) {   
-                
                 addToCart.setAttribute('visible', false);
             });
             var buyNow = document.querySelectorAll('.buy-now')[0];
