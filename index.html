@@ -1,290 +1,155 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='chrome=1'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <meta name='mobile-web-app-capable' content='yes'>
-    <meta name='apple-mobile-web-app-capable' content='yes'>
-
-    <meta name='twitter:card' content='summary'>
-    <meta name='twitter:title' content='WebXR Samples'>
-    <meta name='twitter:description' content='Sample WebXR pages for testing and reference'>
-
-    <link rel='icon' type='image/png' sizes='32x32' href='favicon-32x32.png'>
-    <link rel='icon' type='image/png' sizes='96x96' href='favicon-96x96.png'>
-
-    <link rel='stylesheet' href='css/stylesheet.css'>
-    <link rel='stylesheet' href='css/pygment_trac.css'>
-
-    <style>
-      article {
-        position: relative;
-        padding: 0.5em;
-        background-color: rgba(255, 255, 255, 0.90);
-        margin-bottom: 1em;
-        border-radius: 3px;
-      }
-
-      article h3 {
-        font-size: 1.0em;
-        margin-top: 0px;
-        margin-bottom: 0px;
-      }
-
-      article h3::before {
-        display: inline-block;
-        content: attr(data-index) ' - ';
-        font-weight: bold;
-        white-space: nowrap;
-        margin-right: 0.2em;
-      }
-
-      article h4 {
-        position: absolute;
-        right: 0.5em;
-        top: 0.5em;
-        margin-top: 0px;
-        margin-bottom: 0px;
-      }
-
-      article p {
-        margin: 0.5em;
-      }
-
-      article .links {
-        margin-left: 0.5em;
-        margin-right: 0.5em;
-      }
-
-      article a {
-        display: inline-block;
-      }
-
-      article a:not(:first-child)::before {
-        display: inline-block;
-        content: '•';
-        font-weight: bold;
-        white-space: nowrap;
-        margin-left: 0.5em;
-        margin-right: 0.5em;
-      }
-
-      .github-link {
-        font-size: 0.8em;
-      }
-
-      .wordmark img {
-        width: 70%;
-      }
-    </style>
-
-    <!--[if lt IE 9]>
-    <script src='https://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
-    <![endif]-->
-    <title>WebXR - Samples</title>
-  </head>
+    <meta charset="utf-8">
+    <title>Hello, WebVR! • A-Frame</title>
+    <link rel="stylesheet" type="text/css" href="css/custom-css/all.css">
+    <meta name="description" content="Hello, WebVR! • A-Frame">
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.6.0/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.5.1/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-html-shader@0.2.0/dist/aframe-html-shader.js"></script>
+    <script src="js//custom-js/all.js"></script>
+  </head>  
   <body>
-
-    <div class='container' id='container'>
-      <header class='header'>
-        <div id='nav'>
-            <a href='./' class='selected'>Samples</a>
-            <!--a href='proposals/'>Proposals</a-->
-            <a href='tests/'>Test Pages</a>
-            <a href='report/'>Report</a>
+    <div id="splash">
+      <div class="loader">
+        <img src="media/img/logo.png">
+        <div class="bar">
+          <i class="sphere"></i>
         </div>
+      </div>
+    </div>
+    <a-scene shopping-room background="color: #FAFAFA">
+    <a-assets>
+      <a-asset-item id="showroom" src="media/gltf/showroom/scene.gltf"></a-asset-item>
+      <a-asset-item id="car" src="media/gltf/musclecar/scene.gltf"></a-asset-item>
+      <a-asset-item id="shelf-obj" src="media/obj/shelf/library.obj"></a-asset-item>
+      <img id="shelf-material" src="media/obj/shelf/tex/Wood_Texture_13_by_Sed_rah_Stock.jpg"></img>
 
-        <h1>
-          <a href='' class='wordmark'>
-            <img src='media/logo/webxr-logo.svg' alt='WebXR Logo'/>
-          </a>
-        </h1>
-        <h2 class='tagline'>Sample Pages</h2>
-      </header>
+      <a-asset-item id="bag-obj" src="media/obj/bag/bag.obj"></img>
+      <a-asset-item id="bag-mtl" src="media/obj/bag/bag.mtl"></img>
 
-      <main class='main' id='main'>
-        <p><b>Does my browser support WebXR?</b><br/>
-        <div>
-          <img id='canhazimg' style='width: 32px; float: left;'></img>
-          <p id='canhazwebxr' style='margin-left: 48px;'></p>
-        </div>
-        <script>
-          function isMobile(global) {
-            let check = false;
-            (function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4)))check = true})(global.navigator.userAgent||global.navigator.vendor||global.opera);
-            return check;
-          };
+      <a-asset-item id="bag3-obj" src="media/obj/bag3/bag3.obj"></img>
+      <a-asset-item id="bag3-mtl" src="media/obj/bag3/bag3.mtl"></img>
+      <!-- <a-asset-item id="shirt" src="media/obj/shirtstand/scene.glb"></a-asset-item> -->
+      <a-asset-item id="shirt" src="media/obj/shirtstand/stand2.gltf"></a-asset-item>
 
-          let canhazElement = document.getElementById('canhazwebxr');
-          let canhazImg = document.getElementById('canhazimg');
-          if ('xr' in navigator) {
-            canhazElement.innerText = "Yes! Your browser supports WebXR and can run Virtual Reality and Augment Reality experiences if you have the appropriate hardware."
-            canhazImg.src = "media/textures/check-button.png";
-          } else if ('getVRDisplays' in navigator) {
-            canhazElement.innerText = "Your browser does not support WebXR, but does support the deprecated WebVR API. You may be able to run Virtual Reality experiences on sites that use the WebXR Polyfill, like this one!"
-            canhazImg.src = "media/textures/info-button.png";
-          } else if (isMobile(window)) {
-            canhazElement.innerText = "Your browser does not support WebXR, but you appear to be using a mobile device. You may be able to run Virtual Reality experiences on sites that use the WebXR Polyfill, like this one!"
-            canhazImg.src = "media/textures/info-button.png";
-          } else {
-            canhazElement.innerText = "Sorry, your browser does not support WebXR."
-            canhazImg.src = "media/textures/x-button.png";
-          }
-        </script>
+      <a-asset-item id="shoes-obj" src="media/obj/shoes/shoes.obj"></a-asset-item>
+        <a-asset-item id="shoes-mtl" src="media/obj/shoes/shoes.mtl"></a-asset-item>
 
-        <p><b>Sample pages demonstrating how to use various aspects of the WebXR API.</b><br/>
-        <a href="explainer.html">Learn More</a></p>
+      <a-asset-item id="shoes2-obj" src="media/obj/shoes2/shoes2.obj"></a-asset-item>
+      <a-asset-item id="shoes2-mtl" src="media/obj/shoes2/shoes2.mtl"></a-asset-item>
 
-        <script>
-          let pages = [
-            { title: 'Immersive VR Session', category: 'Basics',
-              path: 'immersive-vr-session.html',
-              description: 'Demonstrates use of an "immersive-vr" XRSession to present a WebGL scene on an VR headset.' },
+      <a-asset-item id="robot-obj" src="media/obj/robot/final-robot-w-moves.obj"></a-asset-item>
+      <a-asset-item id="robot-mtl" src="media/obj/robot/final-robot-w-moves.mtl"></a-asset-item>
+  <!--    <a-asset-item id="car" src="media/gltf/musclecar/scene.gltf"></a-asset-item>
 
-            { title: 'Immersive AR Session', category: 'Basics',
-              path: 'immersive-ar-session.html',
-              description: 'Demonstrates use of an "immersive-ar" XRSession to present a WebGL scene on an AR-enabled phone or headset.' },
+      <a-asset-item id="nissan" src="media/gltf/nissan/scene.gltf"></a-asset-item>
+      <a-asset-item id="martin" src="media/gltf/martin/scene.gltf"></a-asset-item>
+      <a-asset-item id="vm" src="media/gltf/vw/scene.gltf"></a-asset-item>
+  -->
 
-            { title: 'Inline Session', category: 'Basics',
-              path: 'inline-session.html',
-              description: 'Demonstrates use of an "inline" XRSession to present the same WebGL scene on the page and on an XR device.' },
+    </a-assets>
+    <a-entity id="main-camera-wrapper" position="0 13.272 0" rotation="0 270 0">
+      <a-camera id="main-camera" look-controls wasd-controls="acceleration: 2000">
+        <a-cursor id="fuse-cursor" fuse="true" geometry="radiusInner: 0.01; radiusOuter: 0.02; thetaLength: 360; thetaStart: 90;"
+        color="#ffffff" opacity="1" repeat="1 1" shader="flat" position="0 0 -1" objects=".clickable"
+        rotation="0 0 0" scale="1 1 1" visible="true"></a-cursor>
+        <a-ring id="fuse-progress" radius-inner="0.01" radius-outer="0.02" theta-length="360"
+        theta-start="90" color="#ef2e5f" opacity="0" repeat="1 1" shader="flat" position="0 0 -0.999"
+        rotation="0 0 0" scale="1 1 1" visible="true" class="clickable" animation="delay: 0; dir: normal; dur: 1500; easing: linear; loop: 0; property: geometry.thetaLength; startEvents: fusing; to: 0; from: 360;"
+        animation__1="delay: 0; dir: normal; dur: 500; easing: linear; loop: 0; property: opacity; startEvents: fusing; to: 1; from: 0;"></a-ring>
+      </a-camera>
+      <!-- <a-entity geometry="primitive: plane; height: 0.2; width: 0.2" position="0 0 -1"
+      material="color: gray; opacity: 0.5"></a-entity> -->
 
-            { tag: 'hr' },
-            { tag: 'br' },
+    </a-entity>
+    <a-entity id="showroom-model" scale="0.5 0.5 0.5" gltf-model="#showroom"></a-entity>
+    <a-entity position="196.606 0.074 -133.592" scale="1 0.1 0.1" obj-model="obj: #shelf-obj;" cursor-listener material="src: #shelf-material"></a-entity>
+    <a-entity position="196.606 0.074 142.928" rotation="0 180 0" scale="1 0.1 0.1" cursor-listener obj-model="obj: #shelf-obj;" material="src: #shelf-material"></a-entity>
+    <a-entity position="24 0.074 142.928"  rotation="0 180 0" scale="1 0.1 0.1" cursor-listener obj-model="obj: #shelf-obj;" material="src: #shelf-material"></a-entity>
 
-            { title: 'Reduced-Bind Rendering', category: 'Performance',
-              path: 'reduced-bind-rendering.html',
-              description: 'Demonstrates a technique to reduce the number of state changes made while rendering.' },
+    <a-entity position="24 0.074 -133.592"  rotation="0 0 0" scale="0.12 0.12 0.12" cursor-listener obj-model="obj: #robot-obj;mtl: #robot-mtl"></a-entity>    
+    <a-entity position="245.670 0.042 4.922"  rotation="0 -90 0" scale="0.12 0.12 0.12" cursor-listener obj-model="obj: #robot-obj;mtl: #robot-mtl"></a-entity>    
+    
+    <!-- <a-entity position="8.119 0.869 -101.851" scale="0.3 0.3 0.3" obj-model="obj: #shirt-obj;mtl: #shirt-mtl"></a-entity> -->
+    <a-entity class="shirt" position="88.656 1.887 -80.735" scale="0.3 0.3 0.3" gltf-model="#shirt"></a-entity>
+    <a-entity class="shirt" position="88.656 1.887 80.735" scale="0.3 0.3 0.3" gltf-model="#shirt"></a-entity>
 
-            { title: 'Room Scale', category: 'Basics',
-              path: 'room-scale.html',
-              description: 'Demonstrates using a "local-floor" reference space to provide room scale tracking.' },
+    <a-entity class="clickable asin" position="-20.886 2.599 144.472" scale="0.002 0.002 0.002" obj-model="obj: #bag-obj;mtl: #bag-mtl"></a-entity>
+    <a-entity class="clickable asin" position="-10.886 2.599 144.472" scale="0.002 0.002 0.002" obj-model="obj: #bag-obj;mtl: #bag-mtl"></a-entity>
+    <a-entity class="clickable asin" position="0.886 2.599 144.472" scale="0.002 0.002 0.002" obj-model="obj: #bag-obj;mtl: #bag-mtl"></a-entity>
+    <a-entity class="clickable asin" position="10.886 2.599 144.472" scale="0.002 0.002 0.002" obj-model="obj: #bag-obj;mtl: #bag-mtl"></a-entity>
+    <a-entity class="clickable asin" position="20.886 2.599 144.472" scale="0.002 0.002 0.002" obj-model="obj: #bag-obj;mtl: #bag-mtl"></a-entity>
+    <a-entity class="clickable asin" position="30.886 2.599 144.472" scale="0.002 0.002 0.002" obj-model="obj: #bag-obj;mtl: #bag-mtl"></a-entity>
+    <a-entity class="clickable asin" position="40.886 2.599 144.472" scale="0.002 0.002 0.002" obj-model="obj: #bag-obj;mtl: #bag-mtl"></a-entity>
+    <a-entity class="clickable asin" position="50.886 2.599 144.472" scale="0.002 0.002 0.002" obj-model="obj: #bag-obj;mtl: #bag-mtl"></a-entity>
+    <a-entity class="clickable asin" position="60.886 2.599 144.472" scale="0.002 0.002 0.002" obj-model="obj: #bag-obj;mtl: #bag-mtl"></a-entity>
 
-            { title: 'Input Tracking', category: 'Input',
-              path: 'input-tracking.html',
-              description: 'Demonstrates basic tracking and rendering of XRInputSources.'},
+    <a-entity class="clickable asin" position="-20.886 14.348 145.046" scale="0.0007 0.0007 0.0007" obj-model="obj: #bag3-obj;mtl: #bag3-mtl"></a-entity>
+    <a-entity class="clickable asin" position="-10.886 14.348 145.046" scale="0.0007 0.0007 0.0007" obj-model="obj: #bag3-obj;mtl: #bag3-mtl"></a-entity>
+    <a-entity class="clickable asin" position="0.886 14.348 145.046" scale="0.0007 0.0007 0.0007" obj-model="obj: #bag3-obj;mtl: #bag3-mtl"></a-entity>
+    <a-entity class="clickable asin" position="10.886 14.348 145.046" scale="0.0007 0.0007 0.0007" obj-model="obj: #bag3-obj;mtl: #bag3-mtl"></a-entity>
+    <a-entity class="clickable asin" position="20.886 14.348 145.046" scale="0.0007 0.0007 0.0007" obj-model="obj: #bag3-obj;mtl: #bag3-mtl"></a-entity>
+    <a-entity class="clickable asin" position="30.886 14.348 145.046" scale="0.0007 0.0007 0.0007" obj-model="obj: #bag3-obj;mtl: #bag3-mtl"></a-entity>
+    <a-entity class="clickable asin" position="40.886 14.348 145.046" scale="0.0007 0.0007 0.0007" obj-model="obj: #bag3-obj;mtl: #bag3-mtl"></a-entity>
+    <a-entity class="clickable asin" position="50.886 14.348 145.046" scale="0.0007 0.0007 0.0007" obj-model="obj: #bag3-obj;mtl: #bag3-mtl"></a-entity>
+    <a-entity class="clickable asin" position="60.886 14.348 145.046" scale="0.0007 0.0007 0.0007" obj-model="obj: #bag3-obj;mtl: #bag3-mtl"></a-entity>
 
-            { title: 'Input Profiles', category: 'Input',
-              path: 'input-profiles.html',
-              description: 'Demonstrates loading appropriate controller models based on the XRInputSources profiles array.'},
+    <a-entity class="clickable asin" position="183.173 6.600 144.882" scale="0.02 0.02 0.02" rotation="0 180 0" obj-model="obj: #shoes-obj;mtl: #shoes-mtl"></a-entity>
+    <a-entity class="clickable asin" position="173.173 6.600 144.882" scale="0.02 0.02 0.02" rotation="0 180 0" obj-model="obj: #shoes-obj;mtl: #shoes-mtl"></a-entity>
+    <a-entity class="clickable asin" position="163.173 6.600 144.882" scale="0.02 0.02 0.02" rotation="0 180 0" obj-model="obj: #shoes-obj;mtl: #shoes-mtl"></a-entity>
+    <a-entity class="clickable asin" position="153.173 6.600 144.882" scale="0.02 0.02 0.02" rotation="0 180 0" obj-model="obj: #shoes-obj;mtl: #shoes-mtl"></a-entity>
+    <a-entity class="clickable asin" position="193.173 6.600 144.882" scale="0.02 0.02 0.02" rotation="0 180 0" obj-model="obj: #shoes-obj;mtl: #shoes-mtl"></a-entity>
+    <a-entity class="clickable asin" position="203.173 6.600 144.882" scale="0.02 0.02 0.02" rotation="0 180 0" obj-model="obj: #shoes-obj;mtl: #shoes-mtl"></a-entity>
+    <a-entity class="clickable asin" position="213.173 6.600 144.882" scale="0.02 0.02 0.02" rotation="0 180 0" obj-model="obj: #shoes-obj;mtl: #shoes-mtl"></a-entity>
+    <a-entity class="clickable asin" position="223.173 6.600 144.882" scale="0.02 0.02 0.02" rotation="0 180 0" obj-model="obj: #shoes-obj;mtl: #shoes-mtl"></a-entity>
 
-            { title: 'Input Selection', category: 'Input',
-              path: 'input-selection.html',
-              description: 'Demonstrates handling \'select\' events generated by XRInputSources.'},
+    <a-entity class="clickable asin" position="183.173 14.348 142.082" scale="0.4 0.4 0.4" rotation="0 -90 0" obj-model="obj: #shoes2-obj;mtl: #shoes2-mtl"></a-entity>
+    <a-entity class="clickable asin" position="173.173 14.348 142.082" scale="0.4 0.4 0.4" rotation="0 -90 0" obj-model="obj: #shoes2-obj;mtl: #shoes2-mtl"></a-entity>
+    <a-entity class="clickable asin" position="163.173 14.348 142.082" scale="0.4 0.4 0.4" rotation="0 -90 0" obj-model="obj: #shoes2-obj;mtl: #shoes2-mtl"></a-entity>
+    <a-entity class="clickable asin" position="153.173 14.348 142.082" scale="0.4 0.4 0.4" rotation="0 -90 0" obj-model="obj: #shoes2-obj;mtl: #shoes2-mtl"></a-entity>
+    <a-entity class="clickable asin" position="193.173 14.348 142.082" scale="0.4 0.4 0.4" rotation="0 -90 0" obj-model="obj: #shoes2-obj;mtl: #shoes2-mtl"></a-entity>
+    <a-entity class="clickable asin" position="203.173 14.348 142.082" scale="0.4 0.4 0.4" rotation="0 -90 0" obj-model="obj: #shoes2-obj;mtl: #shoes2-mtl"></a-entity>
+    <a-entity class="clickable asin" position="213.173 14.348 142.082" scale="0.4 0.4 0.4" rotation="0 -90 0" obj-model="obj: #shoes2-obj;mtl: #shoes2-mtl"></a-entity>
+    <a-entity class="clickable asin" position="223.173 14.348 142.082" scale="0.4 0.4 0.4" rotation="0 -90 0" obj-model="obj: #shoes2-obj;mtl: #shoes2-mtl"></a-entity>
 
-            { title: 'Controller State', category: 'Input',
-              path: 'controller-state.html',
-              description: 'Demonstrates responding to controller state from an XRInputSource\'s gamepad attribute.'},
+    <a-cylinder class="checkpoint clickable" radius="10" height="100" position="20.886 50 115.858" color="#AACCCCCC" opacity="0.5"></a-cylinder>
+    <a-cylinder class="checkpoint clickable" radius="10" height="100" position="153 50 115.858" color="#CCCCCC"  opacity="0.5"></a-cylinder>
+    <a-cylinder class="checkpoint clickable" radius="10" height="100" position="24 50 -103.592" color="#CCCCCC"  opacity="0.5"></a-cylinder>
+    <a-cylinder class="checkpoint clickable" radius="10" height="100" position="212.443 50 4.905" color="#f0c14b"  opacity="0.5"></a-cylinder>
 
-            { title: 'Framebuffer Scaling', category: 'Performance',
-              path: 'framebuffer-scaling.html',
-              description: 'Demonstrates scaling a layer\'s framebuffer to statically control performance or quality.' },
+    <a-entity geometry="primitive: box" material="shader: html; target: #boxHTML" scale="1 46 46" position="251.617 35.382 5.565"></a-entity>
+    <a-image src="media/img/proceedtopay.png" class="clickable pay-button" position="251.063 23.043 6.893" scale="25 4 5" rotation="0 270 0"></a-image>
 
-            { title: '360 Stereo Photos', category: 'Content',
-              path: '360-photos.html',
-              description: 'Demonstrates displaying a 360 degree equirectangular stereo photo.' },
-
-            { title: 'Stereo Video', category: 'Content',
-              path: 'stereo-video.html',
-              description: 'Demonstrates playing stereo videos.' },
-
-            { title: 'Positional Audio', category: 'Content',
-              path: 'positional-audio.html',
-              description: 'Demonstrates playing audio that sounds as if it originates at a specific point in the space.' },
-
-            { title: 'Spectator Mode', category: 'Advanced Techniques',
-              path: 'spectator-mode.html',
-              description: 'Demonstrates rendering a 3rd person view of the scene to an external monitor.' },
-
-            { title: 'Teleportation', category: 'Advanced Techniques',
-              path: 'teleportation.html',
-              description: 'Demonstrates teleporting the viewer around the scene with getOffsetReferenceSpace().'},
-
-            { tag: 'hr' },
-            { tag: 'br' },
-
-            { title: 'Hit Test', category: 'AR Basics',
-              path: 'hit-test.html',
-              description: 'Demonstrates using the Hit Test API to place virtual objects on real-world surfaces.'},
-
-            { tag: 'hr' },
-            { tag: 'br' },
-
-            { title: 'Barebones VR', category: 'No Dependencies',
-              path: 'vr-barebones.html',
-              description: 'Extremely simple use of "immersive-vr" sessions with no library dependencies. Doesn\'t render anything exciting.',
-              noPolyfill: true },
-
-            { title: 'Barebones AR', category: 'No Dependencies',
-              path: 'ar-barebones.html',
-              description: 'Extremely simple use of "immersive-ar" sessions with no library dependencies. Doesn\'t render anything exciting.',
-              noPolyfill: true },
-          ];
-
-          let mainElement = document.getElementById("main");
-
-          // Append an element for every item in the pages list.
-          let pageIndex = 0;
-          for (var i = 0; i < pages.length; ++i) {
-            var page = pages[i];
-
-            if (page.tag) {
-              mainElement.appendChild(document.createElement(page.tag));
-              continue;
-            } else {
-              pageIndex++;
-            }
-
-            let article = document.createElement('article');
-
-            let title = document.createElement('h3');
-            title.setAttribute('data-index', pageIndex);
-
-            let titleLink = document.createElement('a');
-            titleLink.href = page.path;
-            titleLink.textContent = page.title;
-            title.appendChild(titleLink);
-            article.appendChild(title);
-
-            let category = document.createElement('h4');
-            category.textContent = page.category;
-            article.appendChild(category);
-
-            let description = document.createElement('p');
-            description.textContent = page.description;
-            article.appendChild(description);
-
-            let links = document.createElement('div');
-            links.classList.add('links');
-
-            let sourceLink = document.createElement('a');
-            sourceLink.href = 'https://github.com/immersive-web/webxr-samples/blob/master/' + page.path;
-            sourceLink.textContent = 'Source';
-            links.appendChild(sourceLink);
-
-            if (!page.noPolyfill) {
-              let polyfillLink = document.createElement('a');
-              polyfillLink.href = page.path + '?usePolyfill=0';
-              polyfillLink.textContent = 'Run Without Polyfill';
-              links.appendChild(polyfillLink);
-            }
-
-            article.appendChild(links);
-
-            mainElement.appendChild(article);
-          }
-        </script>
-      </main>
-
-      <p>Models used in these samples come from <a href="https://poly.google.com">Poly</a>, and many were modeled in <a href="https://vr.google.com/blocks/">Blocks</a>.<br/>
-      They a stored and loaded using the <a href="https://www.khronos.org/gltf/">glTF 2.0 format</a>.<br/>
-      Attribution for individual models can be found under the <a href="https://github.com/immersive-web/webxr-samples/tree/master/media/gltf">media/gltf</a> folders for this repository.</p>
-
-      <h3><a class='github-link' href='https://github.com/immersive-web/webxr-samples'>View samples source on GitHub</a></h3>
-
-      <footer class='footer'>
-      </footer>
+    <!-- <a-entity position="8.656 1.887 0.735" scale="0.01 0.01 0.01" obj-model="obj: #bag2-obj;mtl: #bag2-mtl"></a-entity> -->
+<!--  
+  <a-entity scale="0.02 0.02 0.02" gltf-model="#nissan"></a-entity>
+  <a-entity scale="0.02 0.02 0.02" gltf-model="#martin"></a-entity>
+  <a-entity scale="0.01 0.01 0.01" gltf-model="#vm"></a-entity>
+-->
+  
+    </a-scene>
+    <!-- HTML to render as a material. -->
+    <div style="width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden;">
+      <div id="boxHTML" style="background-color: white; color: black; width: 800px; height: 800px; text-align: center">
+        <img src="media/img/logo.png">
+        <h1> Shopping cart </h1>
+        <hr>
+        <table style="margin: 20px;">
+          <tr>
+            <td><img src="media/img/heels.jpg" style="height: 120px; width: 120px;"></td>
+            <td >
+              <div style="padding-left: 40px; text-align: left;">
+                <div> <h2> Heel & Buckle London Women Black Lucite Peep-toe Boots </h2> </div>
+                <div> ₹ 7,999 </div>
+                <div> Sold by: Heel & Buckle </div>
+              </div>
+            </td>
+          </tr>
+        </table>        
+      </div>
     </div>
   </body>
 </html>
