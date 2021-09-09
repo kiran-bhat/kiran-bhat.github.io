@@ -44,7 +44,7 @@ function setupCameraControls(){
     var payButtons = document.querySelectorAll('.pay-button');
     payButtons.forEach(function(payButton) {
         payButton.addEventListener('click', function(e) {                    
-            window.location = 'https://www.amazon.in/upi/pending-transactions';
+            window.location = 'https://www.amazon.in/';
         })
     });
 }
