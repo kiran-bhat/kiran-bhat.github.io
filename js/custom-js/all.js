@@ -9,8 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var payButtons = document.querySelectorAll('.pay-button');
     payButtons.forEach(function(payButton) {
-        payButton.addEventListener('click', function(e) {                    
-            window.location = 'https://www.amazon.in/';
+        payButton.addEventListener('click', function(e) {                   
+        console.log('clicked'); 
+            //window.location = 'https://www.amazon.in/';
         })
     });    
 });
