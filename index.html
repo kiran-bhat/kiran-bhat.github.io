@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Hackathon SmartStore! • Amazon</title>
+    <title>Hackathon Game! • Amazon Go</title>
     <link rel="stylesheet" type="text/css" href="css/custom-css/all.css">
-    <meta name="description" content="Hello, WebVR! • A-Frame">
+    <meta name="description" content="Hello, to the new world! • A-Frame">
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.6.0/dist/aframe-extras.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.5.1/dist/aframe-look-at-component.min.js"></script>
@@ -22,7 +22,7 @@
     </div>
     <a-scene shopping-room background="color: #FAFAFA">
     <a-assets>
-      <a-asset-item id="showroom" src="media/gltf/showroom/scene.gltf"></a-asset-item>
+    <!--  <a-asset-item id="showroom" src="media/gltf/showroom/scene.gltf"></a-asset-item> -->
       <a-asset-item id="car" src="media/gltf/musclecar/scene.gltf"></a-asset-item>
       <a-asset-item id="shelf-obj" src="media/obj/shelf/library.obj"></a-asset-item>
       <img id="shelf-material" src="media/obj/shelf/tex/Wood_Texture_13_by_Sed_rah_Stock.jpg"></img>
@@ -65,7 +65,7 @@
       material="color: gray; opacity: 0.5"></a-entity> -->
 
     </a-entity>
-    <a-entity id="showroom-model" scale="0.5 0.5 0.5" gltf-model="#showroom"></a-entity>
+    <!-- <a-entity id="showroom-model" scale="0.5 0.5 0.5" gltf-model="#showroom"></a-entity> -->
     <a-entity position="196.606 0.074 -133.592" scale="1 0.1 0.1" obj-model="obj: #shelf-obj;" cursor-listener material="src: #shelf-material"></a-entity>
     <a-entity position="196.606 0.074 142.928" rotation="0 180 0" scale="1 0.1 0.1" cursor-listener obj-model="obj: #shelf-obj;" material="src: #shelf-material"></a-entity>
     <a-entity position="24 0.074 142.928"  rotation="0 180 0" scale="1 0.1 0.1" cursor-listener obj-model="obj: #shelf-obj;" material="src: #shelf-material"></a-entity>

@@ -47,7 +47,7 @@
 }
 
 .loader .bar:after {
-    content: "Please wait. We are launching amazon experience smart store.";
+    content: "Please wait. We are launching Amazon Go.";
     position: absolute;
     top: 200%;
     width: 400px;;

@@ -68,11 +68,11 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
       let scene = new Scene();
       scene.enableStats(false);
-      let showRoom = new Gltf2Node({url: 'media/gltf/showroom/scene.gltf'});
-      showRoom.selectable = true;
+      //let showRoom = new Gltf2Node({url: 'media/gltf/showroom/scene.gltf'});
+      //showRoom.selectable = true;
       // The solar system is big (citation needed). Scale it down so that users
       // can move around the planets more easily.
-      scene.addNode(showRoom);
+      //scene.addNode(showRoom);
       let car = new Gltf2Node({url: 'media/gltf/musclecar/scene.gltf'});
       showRoom.addNode(car);
       // Still adding a skybox, but only for the benefit of the inline view.
