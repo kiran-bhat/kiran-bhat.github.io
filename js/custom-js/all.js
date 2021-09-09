@@ -3,14 +3,11 @@ document.addEventListener('DOMContentLoaded', function() {
     var splash = document.querySelector('#splash');
     scene.addEventListener('loaded', function (e) {
         // splash.style.display = 'none';
-        // console.log('Scene loaded');
-    });
-    var roomModel = document.querySelector('#showroom-model');
-    roomModel.addEventListener('model-loaded', function (e) {
-        splash.style.display = 'none';
-        console.log('Model loaded');
+        console.log('Scene loaded');
         setupCameraControls();
     });
+
+        
 });
 
 function setupCameraControls(){
