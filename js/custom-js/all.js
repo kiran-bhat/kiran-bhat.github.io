@@ -11,7 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
     payButtons.forEach(function(payButton) {
         payButton.addEventListener('click', function(e) {                   
         console.log('clicked'); 
-            //window.location = 'https://www.amazon.in/';
+            setTimeout(function () {
+   window.location.href = "https://amazon.in"; //will redirect to your blog page (an ex: blog.html)
+}, 2000); //will call the function after 2 secs.
         })
     });    
 });
